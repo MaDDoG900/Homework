@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int a = 0x7f01b78a;
+int b = 0;
+int maska = 0x0000000f;
+int c = 28;
+int i ;
+//int s[32];                        //   << по битовый сдвиг
+//int s1 [32];
+printf("a = %x \n", a);
+for (i=1; i<=8; i++)
+{
+   // if (i<= 4) {
+        b |= ((a&maska) << c);
+        //   }
+//else {
+       //     b |= ((a&maska)>> abs(c));
+        //   }
+            c =c-4;
+            a=a >> 4;
+            printf("b=%x \n ", b);
+}
+
+return 0;
+}

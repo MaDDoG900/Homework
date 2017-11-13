@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+main() {
+	float a,b;
+	char sign='+';
+	while (sign != '0') {
+		printf("Znak: ");
+		scanf("%c%*c", &sign);
+		if (sign == '0') { break; }
+		if (sign == '+' || sign == '-' || sign == '*' || sign == '/') {
+			printf("a=");
+			scanf("%f%*c", &a);
+			printf("b=");
+			scanf("%f%*c", &b);
+			switch (sign) {
+				case '+':
+					printf("%.2f\n", a+b);
+					break;
+				case '-':
+					printf("%.2f\n", a-b);
+					break;
+				case '*':
+					printf("%.2f\n", a*b);
+					break;
+				case '/':
+					if (b != 0) printf("%.2f\n", a/b);
+					else printf("delenie na nol\n");
+			}
+		}
+		else printf("neverno ykazan znak\n");
+	}
+	 return 0;
+
+
+}
